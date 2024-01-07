@@ -1,0 +1,13 @@
+
+--Write an SQL query to print the first three characters of  FIRST_NAME from Worker table.
+
+select top 3 FIRST_NAME from worker 
+
+--Q-2. Write an SQL query to find the position of the alphabet (‘a’) in the first name column ‘Amitabh’ from Worker table.
+
+select CHARINDEX('a',FIRST_NAME) as positionofA
+from worker where FIRST_NAME = 'Amitabh'
+
+--Q-3. Write an SQL query to print the name of employees having the highest salary in each department.
+
+select top 3 * from worker order by SALARY
