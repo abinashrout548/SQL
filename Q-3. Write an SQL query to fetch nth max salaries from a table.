@@ -11,4 +11,4 @@ select Department, Len(Department) As departmentLength from worker group by DEPA
 
 --Q-3. Write an SQL query to fetch nth max salaries from a table.
 
-select DISTINCT(salary) from worker order by SALARY DESC OFFSET 1-1 ROWS FETCH NEXT 1 ROW ONLY;
+select DISTINCT(salary) from worker order by SALARY DESC OFFSET n-1 ROWS FETCH NEXT 1 ROW ONLY;
