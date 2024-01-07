@@ -1,0 +1,14 @@
+--Assignment - 3
+
+--Q-1. Write an SQL query to print the FIRST_NAME from Worker table after removing white spaces from the right side.
+
+SELECT RTRIM(FIRST_NAME) AS TrimmedFirstName
+FROM Worker;
+
+--Q-2. Write an SQL query that fetches the unique values of DEPARTMENT from Worker table and prints its length.
+
+select Department, Len(Department) As departmentLength from worker group by DEPARTMENT
+
+--Q-3. Write an SQL query to fetch nth max salaries from a table.
+
+select DISTINCT(salary) from worker order by SALARY DESC OFFSET 1-1 ROWS FETCH NEXT 1 ROW ONLY;
