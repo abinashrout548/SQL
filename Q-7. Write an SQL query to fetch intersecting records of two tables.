@@ -1,1 +1,9 @@
 
+--Q-15. Write an SQL query to fetch intersecting records of two tables.
+
+select * from user_details intersect 
+select * from worker
+
+--Q-16. Write an SQL query to show records from one table that another table does not have.
+
+select * from user_details where user_details.user_id not in (SELECT Empid FROM worker)
