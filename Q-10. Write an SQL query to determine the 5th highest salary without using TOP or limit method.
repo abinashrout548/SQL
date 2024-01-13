@@ -1,0 +1,21 @@
+--Q-19. Write an SQL query to determine the 5th highest salary without using TOP or limit method.
+
+WITH RankedSalaries AS (
+    SELECT
+        Salary,
+        ROW_NUMBER() OVER (ORDER BY Salary DESC) AS SalaryRank
+    FROM
+        worker
+)
+
+SELECT Salary
+FROM RankedSalaries
+WHERE SalaryRank = 5
+
+
+--Q-20. Write an SQL query to fetch the list of employees with the same salary.
+
+SELECT Salary, COUNT(*) AS EmployeeCount
+FROM worker
+GROUP BY Salary
+HAVING COUNT(*) > 1
